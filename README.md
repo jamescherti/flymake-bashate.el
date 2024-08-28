@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
 ![](https://raw.githubusercontent.com/jamescherti/flymake-bashate.el/main/.images/made-for-gnu-emacs.svg)
 
-The `flymake-bashate` Emacs package provides a Flymake backend for the `bashate` Bash script style checker.
+    The `flymake-bashate` Emacs package provides a Flymake backend for the `bashate` Bash script style checker.
 
 ## Installation
 
@@ -29,7 +29,7 @@ To install the `flymake-bashate` using straight.el`:
 
 ### Ignoring Bashate errors
 
-To make `flymake-bashate` ignore specific Bashate rules, such as E003 and E006, set the following variable:
+To make `bashate` ignore specific Bashate rules, such as E003 and E006, set the following variable:
 ```emacs-lisp
 (setq flymake-bashate-ignore "E003,E006")
 ```
@@ -53,6 +53,8 @@ To change the path or filename of the Bashate executable:
 ```emacs-lisp
 (setq flymake-bashate-executable "/opt/different-directory/bin/bashate")
 ```
+
+(Defaults to `bashate`.)
 
 ## License
 
