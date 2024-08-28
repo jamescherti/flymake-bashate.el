@@ -1,6 +1,7 @@
 # flymake-bashate.el
 ![Build Status](https://github.com/jamescherti/flymake-bashate.el/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
+![](https://raw.githubusercontent.com/jamescherti/flymake-bashate.el/main/.images/made-for-gnu-emacs.svg)
 
 The `flymake-bashate` Emacs package is Flymake handler that checks Bash code style using `bashate`.
 
