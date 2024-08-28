@@ -1,4 +1,4 @@
-;;; flymake-bashate.el --- A Flymake handler for Bash scripts using Bashate  -*- lexical-binding: t; -*-
+;;; flymake-bashate.el --- A Flymake handler for Emacs that checks Bash code style using Bashate -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 James Cherti | https://www.jamescherti.com/contact/
 
@@ -23,11 +23,10 @@
 ;; along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; The `flymake-bashate` Emacs package integrates Bashate with Flymake, enabling
-;; real-time syntax and style checks for Bash scripts directly within Emacs.
+;; A Flymake handler for Emacs that checks Bash code style using Bashate.
 ;;
-;; Bashate is a Bash script syntax checker, enforcing a set of style and syntax
-;; rules to ensure that your scripts are consistent, clean, and easy to read.
+;; (Bashate is a Bash script syntax checker, enforcing a set of style and syntax
+;; rules to ensure that your scripts are consistent, clean, and easy to read.)
 
 ;;; Code:
 

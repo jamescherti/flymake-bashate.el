@@ -2,9 +2,9 @@
 ![Build Status](https://github.com/jamescherti/flymake-bashate.el/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
 
-The `flymake-bashate` Emacs package integrates Bashate with Flymake, enabling real-time syntax and style checks for Bash scripts directly within Emacs.
+A Flymake handler for Emacs that checks Bash code style using Bashate.
 
-Bashate is a Bash script syntax checker, enforcing a set of style and syntax rules to ensure that your scripts are consistent, clean, and easy to read.
+(Bashate is a Bash script syntax checker, enforcing a set of style and syntax rules to ensure that your scripts are consistent, clean, and easy to read.)
 
 ## Installation
 
