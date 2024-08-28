@@ -23,7 +23,8 @@
 ;; along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; A Flymake handler for Emacs that checks Bash code style using Bashate.
+;; `flymake-bashate' is a Flymake handler for Emacs that checks Bash code style
+;; using Bashate.
 ;;
 ;; (Bashate is a Bash script syntax checker, enforcing a set of style and syntax
 ;; rules to ensure that your scripts are consistent, clean, and easy to read.)
@@ -43,7 +44,8 @@
 
 (flymake-quickdef-backend flymake-bashate-checker
   :pre-let ((bashate-exec (executable-find "bashate")))
-  :pre-check (unless bashate-exec (error "Cannot find bashate executable"))
+  :pre-check (unless bashate-exec
+               (error "The bashate executable was not found"))
   :write-type 'file
   :proc-form (list bashate-exec fmqd-temp-file)
   ;; Equivalent to:
@@ -68,7 +70,7 @@
          (type (cond
                 ;; E040: Syntax errors reported by bash -n
                 ((string= code "E040") :error)
-                ;; The other errors are actually warnings (code style)
+                ;; All other errors are warnings related to code style
                 (t :warning)))
          (msg (format "%s: %s" code text)))
     (list fmqd-source beg end type msg)))
