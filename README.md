@@ -29,7 +29,7 @@ To install the `flymake-bashate` using straight.el`:
 
 ### Ignoring Bashate errors
 
-To make `bashate` ignore specific Bashate rules, such as E003 and E006, set the following variable:
+To make `bashate` ignore specific Bashate rules, such as E003 (ensure all indents are a multiple of 4 spaces) and E006 (check for lines longer than 79 columns), set the following variable:
 ```emacs-lisp
 (setq flymake-bashate-ignore "E003,E006")
 ```
