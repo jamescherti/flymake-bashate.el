@@ -16,7 +16,7 @@ To install the `flymake-bashate` using `straight.el`:
 1. If you haven't already done so, [add the straight.el bootstrap code](https://github.com/radian-software/straight.el?tab=readme-ov-file#getting-started) to your init file.
 
 2. Add the following code to your Emacs init file:
-```
+```emacs-lisp
 (use-package flymake-bashate
   :ensure t
   :straight (flymake-bashate
