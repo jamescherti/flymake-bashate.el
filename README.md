@@ -37,24 +37,6 @@ To make `flymake-bashate` ignore specific Bashate rules, such as E003 and E006, 
 
 (This corresponds to the `-i` or `--ignore` option in Bashate.)
 
-### Treating rules as warnings
-
-To configure certain Bashate rules to trigger warnings instead of errors:
-```emacs-lisp
-(setq flymake-bashate-warn "E001,E007")
-```
-
-(This corresponds to the `-w` or `--warn` option in Bashate.)
-
-### Treating rules as errors
-
-To make specific Bashate rules be treated as errors rather than warnings:
-```emacs-lisp
-(setq flymake-bashate-error "E001,E007")
-```
-
-(This corresponds to the `-e` or `--error` option in Bashate.)
-
 ### Setting maximum line length
 
 To define the maximum line length for Bashate to check:

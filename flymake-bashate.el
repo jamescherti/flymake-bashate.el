@@ -50,20 +50,6 @@ This corresponds to the `-i` or `--ignore` option in Bashate."
                  (string :tag "Rules to ignore"))
   :group 'flymake-bashate)
 
-(defcustom flymake-bashate-warn nil
-  "The Bashate rules to warn on instead of treating them as errors.
-This corresponds to the `-w` or `--warn` option in Bashate."
-  :type '(choice (const :tag "None" nil)
-                 (string :tag "Rules to warn"))
-  :group 'flymake-bashate)
-
-(defcustom flymake-bashate-error nil
-  "The Bashate rules to treat as errors rather than warnings.
-This corresponds to the `-e` or `--error` option in Bashate."
-  :type '(choice (const :tag "None" nil)
-                 (string :tag "Rules to treat as errors"))
-  :group 'flymake-bashate)
-
 (defcustom flymake-bashate-max-line-length nil
   "The maximum line length in characters. Must be a positive integer.
 This corresponds to the `--max-line-length` option in Bashate."
@@ -72,33 +58,33 @@ This corresponds to the `--max-line-length` option in Bashate."
 
 (defcustom flymake-bashate-executable "bashate"
   "Path to the Bashate executable.
-If not specified with a full path (e.g., bashate), `flymake-bashate-checker'
+If not specified with a full path (e.g., bashate), `flymake-bashate-backend'
 will search for the executable in the directories listed in the $PATH
 environment variable."
   :type 'string
   :group 'flymake-bashate)
 
-(flymake-quickdef-backend flymake-bashate-checker
+(flymake-quickdef-backend flymake-bashate-backend
   :pre-let ((bashate-exec (executable-find flymake-bashate-executable)))
-  :pre-check (unless bashate-exec
-               (error "The bashate executable was not found"))
+  :pre-check (progn
+               (unless bashate-exec
+                 (error "The bashate executable was not found"))
+               (unless (numberp flymake-bashate-max-line-length)
+                 (error "The `flymake-bashate-max-line-length' has to be a number")))
   :write-type 'file
   :proc-form `(,bashate-exec
                ,@(when flymake-bashate-ignore
                    `("--ignore" ,flymake-bashate-ignore))
-               ,@(when flymake-bashate-warn
-                   `("--warn" ,flymake-bashate-warn))
-               ,@(when flymake-bashate-error
-                   `("--error" ,flymake-bashate-error))
-               ,@(when flymake-bashate-max-line-length
+               ,@(when (and flymake-bashate-max-line-length
+                            (numberp flymake-bashate-max-line-length))
                    `("--max-line-length"
-                     ,(number-to-string
-                       flymake-bashate-max-line-length)))
+                     ,(number-to-string flymake-bashate-max-line-length)))
                ,fmqd-temp-file)
+
   ;; Equivalent to:
   ;; "^[^:]+:\\([0-9]+\\):\\([0-9]+\\):[ \t]+\\(E[0-9]+\\) \\(.+\\)$"
   :search-regexp (rx bol
-                     (zero-or-more (not ":")) ":"
+                     (zero-or-more any) ":"
                      (group (one-or-more digit)) ":"
                      (group (one-or-more digit)) ":"
                      (one-or-more (syntax whitespace))
@@ -125,7 +111,7 @@ environment variable."
 ;;;###autoload
 (defun flymake-bashate-load ()
   "Enable Flymake and flymake-bashate."
-  (add-hook 'flymake-diagnostic-functions 'flymake-bashate-checker nil t)
+  (add-hook 'flymake-diagnostic-functions 'flymake-bashate-backend nil t)
   (flymake-mode t))
 
 (provide 'flymake-bashate)
