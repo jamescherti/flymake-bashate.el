@@ -2,9 +2,9 @@
 ![Build Status](https://github.com/jamescherti/flymake-bashate.el/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
 
-A Flymake handler for Emacs that checks Bash code style using Bashate.
+The `flymake-bashate` Emacs package is Flymake handler that checks Bash code style using `bashate`.
 
-(Bashate is a Bash script syntax checker, enforcing a set of style and syntax rules to ensure that your scripts are consistent, clean, and easy to read.)
+(`bashate` is a Bash script syntax checker, enforcing a set of style and syntax rules to ensure that your scripts are consistent, clean, and easy to read.)
 
 ## Installation
 
@@ -26,6 +26,53 @@ To install the `flymake-bashate` using `straight.el`:
          (bash-ts-mode . flymake-bashate-load)))
 ```
 
+## Customization
+
+### Ignoring Bashate errors
+
+To make `flymake-bashate` ignore specific Bashate rules, such as E003 and E006, set the following variable:
+```emacs-lisp
+(setq flymake-bashate-ignore "E003,E006")
+```
+
+(This corresponds to the `-i` or `--ignore` option in Bashate.)
+
+### Treating rules as warnings
+
+To configure certain Bashate rules to trigger warnings instead of errors:
+```emacs-lisp
+(setq flymake-bashate-warn "E001,E007")
+```
+
+(This corresponds to the `-w` or `--warn` option in Bashate.)
+
+### Treating rules as errors
+
+To make specific Bashate rules be treated as errors rather than warnings:
+```emacs-lisp
+(setq flymake-bashate-error "E001,E007")
+```
+
+(This corresponds to the `-e` or `--error` option in Bashate.)
+
+### Setting maximum line length
+
+To define the maximum line length for Bashate to check:
+
+```emacs-lisp
+(setq flymake-bashate-max-line-length 80)
+```
+
+(This corresponds to the `--max-line-length` option in Bashate.)
+
+### Specifying the Bashate executable
+
+To change the path or filename of the Bashate executable:
+
+```emacs-lisp
+(setq flymake-bashate-executable "/opt/different-directory/bin/bashate")
+```
+
 ## License
 
 Copyright (C) 2024 [James Cherti](https://www.jamescherti.com)
@@ -39,7 +86,7 @@ You should have received a copy of the GNU General Public License along with thi
 ## Links
 
 - [flymake-bashate.el @GitHub](https://github.com/jamescherti/flymake-bashate.el)
-- [Bashate](https://github.com/openstack/bashate)
+- [Bashate @GitHub](https://github.com/openstack/bashate)
 
 Other Emacs packages by the same author:
 - [minimal-emacs.d](https://github.com/jamescherti/minimal-emacs.d): This repository hosts a minimal Emacs configuration designed to serve as a foundation for your vanilla Emacs setup and provide a solid base for an enhanced Emacs experience.
