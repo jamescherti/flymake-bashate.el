@@ -1,4 +1,4 @@
-;;; flymake-bashate.el --- A Flymake handler for Emacs that checks Bash code style using Bashate -*- lexical-binding: t; -*-
+;;; flymake-bashate.el --- A Flymake backend for bashate (a Bash style checker) -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 James Cherti | https://www.jamescherti.com/contact/
 

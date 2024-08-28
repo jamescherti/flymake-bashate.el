@@ -3,9 +3,7 @@
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
 ![](https://raw.githubusercontent.com/jamescherti/flymake-bashate.el/main/.images/made-for-gnu-emacs.svg)
 
-The `flymake-bashate` Emacs package is a Flymake handler that checks Bash code style using `bashate`.
-
-(`bashate` is a Bash script syntax checker, enforcing a set of style and syntax rules to ensure that your scripts are consistent, clean, and easy to read.)
+The `flymake-bashate` Emacs package is a Flymake backend for `bashate`, a Bash script style checker.
 
 ## Installation
 
