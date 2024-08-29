@@ -70,7 +70,7 @@ environment variable."
                (unless bashate-exec
                  (error "The bashate executable was not found"))
                (unless (numberp flymake-bashate-max-line-length)
-                 (error "The `flymake-bashate-max-line-length' has to be a number")))
+                 (error "The `flymake-bashate-max-line-length' must be a number")))
   :write-type 'file
   :proc-form `(,bashate-exec
                ,@(when flymake-bashate-ignore
@@ -80,9 +80,6 @@ environment variable."
                    `("--max-line-length"
                      ,(number-to-string flymake-bashate-max-line-length)))
                ,fmqd-temp-file)
-
-  ;; Equivalent to:
-  ;; "^[^:]+:\\([0-9]+\\):\\([0-9]+\\):[ \t]+\\(E[0-9]+\\) \\(.+\\)$"
   :search-regexp (rx bol
                      (zero-or-more any) ":"
                      (group (one-or-more digit)) ":"
