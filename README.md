@@ -21,8 +21,8 @@ To install the `flymake-bashate` using straight.el`:
              :type git
              :host github
              :repo "jamescherti/flymake-bashate.el")
-  :hook ((sh-mode . flymake-bashate-load)
-         (bash-ts-mode . flymake-bashate-load)))
+  :hook ((sh-mode . flymake-bashate-setup)
+         (bash-ts-mode . flymake-bashate-setup)))
 ```
 
 ## Customization

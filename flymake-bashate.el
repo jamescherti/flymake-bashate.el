@@ -109,7 +109,7 @@ environment variable."
     (list fmqd-source beg end type msg)))
 
 ;;;###autoload
-(defun flymake-bashate-load ()
+(defun flymake-bashate-setup ()
   "Enable Flymake and flymake-bashate."
   (add-hook 'flymake-diagnostic-functions 'flymake-bashate-backend nil t)
   (flymake-mode t))
