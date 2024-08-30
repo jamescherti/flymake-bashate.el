@@ -3,7 +3,7 @@
 ;; Copyright (C) 2024 James Cherti | https://www.jamescherti.com/contact/
 
 ;; Author: James Cherti
-;; Version: 0.9.9
+;; Version: 1.0.1
 ;; URL: https://github.com/jamescherti/flymake-bashate.el
 ;; Keywords: tools
 ;; Package-Requires: ((flymake-quickdef "1.0.0") (emacs "26.1"))
