@@ -48,7 +48,7 @@ To change the path or filename of the Bashate executable:
 (setq flymake-bashate-executable "/opt/different-directory/bin/bashate")
 ```
 
-(Defaults to `bashate`.)
+(Defaults to "bashate".)
 
 ## License
 
