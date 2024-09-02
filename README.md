@@ -1,14 +1,14 @@
-# flymake-bashate.el
+# flymake-bashate.el - A Flymake backend for the bashate
 [![MELPA](https://melpa.org/packages/flymake-bashate-badge.svg)](https://melpa.org/#/flymake-bashate)
 ![Build Status](https://github.com/jamescherti/flymake-bashate.el/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
 ![](https://raw.githubusercontent.com/jamescherti/flymake-bashate.el/main/.images/made-for-gnu-emacs.svg)
 
-The `flymake-bashate` Emacs package provides a Flymake backend for the `bashate` Bash script style checker.
+The `flymake-bashate` Emacs package provides a Flymake backend for the `bashate`, a style checker for Bash shell scripts.
 
 ## Installation
 
-To install the `flymake-bashate` from MELPA by adding the following code to your Emacs init file:
+To install `flymake-bashate` from MELPA, add the following code to your Emacs init file:
 ```emacs-lisp
 (use-package flymake-bashate
   :ensure t

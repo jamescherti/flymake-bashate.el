@@ -1,4 +1,4 @@
-;;; flymake-bashate.el --- A Flymake backend for bashate (a Bash style checker) -*- lexical-binding: t; -*-
+;;; flymake-bashate.el --- A Flymake backend for bashate, a Bash scripts style checker -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2024 James Cherti | https://www.jamescherti.com/contact/
 
@@ -23,8 +23,8 @@
 ;; along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; `flymake-bashate' is a Flymake backend that checks Bash code style
-;; using Bashate.
+;; The flymake-bashate provides a Flymake backend for the bashate, a style
+;; checker for Bash shell scripts.
 ;;
 ;; (Bashate is a Bash script syntax checker, enforcing a set of style and syntax
 ;; rules to ensure that your scripts are consistent, clean, and easy to read.)
