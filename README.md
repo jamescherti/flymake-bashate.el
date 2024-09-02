@@ -1,4 +1,5 @@
 # flymake-bashate.el
+[![MELPA](https://melpa.org/packages/flymake-bashate-badge.svg)](https://melpa.org/#/flymake-bashate)
 ![Build Status](https://github.com/jamescherti/flymake-bashate.el/actions/workflows/ci.yml/badge.svg)
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
 ![](https://raw.githubusercontent.com/jamescherti/flymake-bashate.el/main/.images/made-for-gnu-emacs.svg)
@@ -7,22 +8,15 @@ The `flymake-bashate` Emacs package provides a Flymake backend for the `bashate`
 
 ## Installation
 
-### Install using straight
-
-To install the `flymake-bashate` using straight.el`:
-
-1. If you haven't already done so, [add the straight.el bootstrap code](https://github.com/radian-software/straight.el?tab=readme-ov-file#getting-started) to your init file.
-
-2. Add the following code to your Emacs init file:
+To install the `flymake-bashate` from MELPA by adding the following code to your Emacs init file:
 ```emacs-lisp
 (use-package flymake-bashate
   :ensure t
-  :straight (flymake-bashate
-             :type git
-             :host github
-             :repo "jamescherti/flymake-bashate.el")
-  :hook ((sh-mode . flymake-bashate-setup)
-         (bash-ts-mode . flymake-bashate-setup)))
+  :commands flymake-bashate-setup
+  :hook (((bash-ts-mode sh-mode) . flymake-bashate-setup)
+         ((bash-ts-mode sh-mode) . flymake-mode))
+  :custom
+  (flymake-bashate-max-line-length 80))
 ```
 
 ## Customization
@@ -69,6 +63,7 @@ You should have received a copy of the GNU General Public License along with thi
 ## Links
 
 - [flymake-bashate.el @GitHub](https://github.com/jamescherti/flymake-bashate.el)
+- [Bashate @MELPA](https://melpa.org/#/flymake-bashate)
 - [Bashate @GitHub](https://github.com/openstack/bashate)
 
 Other Emacs packages by the same author:

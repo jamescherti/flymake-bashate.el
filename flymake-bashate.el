@@ -23,7 +23,7 @@
 ;; along with GNU Emacs.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; `flymake-bashate' is a Flymake handler for Emacs that checks Bash code style
+;; `flymake-bashate' is a Flymake backend that checks Bash code style
 ;; using Bashate.
 ;;
 ;; (Bashate is a Bash script syntax checker, enforcing a set of style and syntax
@@ -108,8 +108,7 @@ environment variable."
 ;;;###autoload
 (defun flymake-bashate-setup ()
   "Enable Flymake and flymake-bashate."
-  (add-hook 'flymake-diagnostic-functions 'flymake-bashate-backend nil t)
-  (flymake-mode t))
+  (add-hook 'flymake-diagnostic-functions #'flymake-bashate-backend nil t))
 
 (provide 'flymake-bashate)
 ;;; flymake-bashate.el ends here
