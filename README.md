@@ -63,7 +63,7 @@ You should have received a copy of the GNU General Public License along with thi
 ## Links
 
 - [flymake-bashate.el @GitHub](https://github.com/jamescherti/flymake-bashate.el)
-- [Bashate @MELPA](https://melpa.org/#/flymake-bashate)
+- [flymake-bashate.el @MELPA](https://melpa.org/#/flymake-bashate)
 - [Bashate @GitHub](https://github.com/openstack/bashate)
 
 Other Emacs packages by the same author:
