@@ -68,9 +68,10 @@ environment variable."
   :pre-let ((bashate-exec (executable-find flymake-bashate-executable)))
   :pre-check (progn
                (unless bashate-exec
-                 (error "The bashate executable was not found"))
+                 (error "The '%s' executable was not found" bashate-exec))
                (unless (numberp flymake-bashate-max-line-length)
-                 (error "The `flymake-bashate-max-line-length' must be a number")))
+                 (error
+                  "The `flymake-bashate-max-line-length' must be a number")))
   :write-type 'file
   :proc-form `(,bashate-exec
                ,@(when flymake-bashate-ignore
@@ -107,7 +108,9 @@ environment variable."
 
 ;;;###autoload
 (defun flymake-bashate-setup ()
-  "Enable Flymake and flymake-bashate."
+  "Set up Flymake for Bashate linting in the current buffer.
+This function adds `flymake-bashate-backend' to the list of Flymake diagnostic
+functions, enabling Bashate style checks locally for the current buffer."
   (add-hook 'flymake-diagnostic-functions #'flymake-bashate-backend nil t))
 
 (provide 'flymake-bashate)
