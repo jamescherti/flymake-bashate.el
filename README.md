@@ -8,7 +8,11 @@ The `flymake-bashate` Emacs package provides a Flymake backend for `bashate`, a 
 
 ## Installation
 
-To install `flymake-bashate` from MELPA, add the following code to your Emacs init file:
+To install the `flymake-bashate` from MELPA:
+
+1. If you haven't already done so, [add MELPA repository to your Emacs configuration](https://melpa.org/#/getting-started).
+
+2. Add the following code to your Emacs init file to install `flymake-bashate` from MELPA:
 ```emacs-lisp
 (use-package flymake-bashate
   :ensure t
