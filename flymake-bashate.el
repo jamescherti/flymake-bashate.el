@@ -82,7 +82,8 @@ environment variable."
                      ,(number-to-string flymake-bashate-max-line-length)))
                ,fmqd-temp-file)
   :search-regexp (rx bol
-                     (zero-or-more any) ":"
+                     (zero-or-more any)
+                     (literal (file-name-nondirectory fmqd-temp-file)) ":"
                      (group (one-or-more digit)) ":"
                      (group (one-or-more digit)) ":"
                      (one-or-more (syntax whitespace))
