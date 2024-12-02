@@ -33,8 +33,8 @@
 ;; package, which allows any Emacs Flymake backend to function as a Flycheck
 ;; checker.)*
 ;;
-;; Installation:
-;; -------------
+;; Installation from MELPA:
+;; ------------------------
 ;; (use-package flymake-bashate
 ;;   :ensure t
 ;;   :commands flymake-bashate-setup
