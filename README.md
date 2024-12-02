@@ -6,7 +6,7 @@
 
 The `flymake-bashate` Emacs package provides a Flymake backend for `bashate`, a style checker for Bash shell scripts.
 
-*(This package can also work with Flycheck: simply use the `flymake-flycheck` package, which allows any Emacs Flymake backend to function as a Flycheck checker.)*
+*(This package can also work with Flycheck: simply use the flymake-flycheck package, which allows any Emacs Flymake backend to function as a Flycheck checker.)*
 
 ## Installation
 
