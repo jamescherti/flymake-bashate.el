@@ -6,7 +6,7 @@
 ;; Version: 1.0.2
 ;; URL: https://github.com/jamescherti/flymake-bashate.el
 ;; Keywords: tools
-;; Package-Requires: ((flymake-quickdef "1.0.0") (emacs "26.1"))
+;; Package-Requires: ((flymake-quickdef "1.0.0") (emacs "27.1"))
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is free software; you can redistribute it and/or modify
