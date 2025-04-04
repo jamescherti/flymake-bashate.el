@@ -100,9 +100,9 @@ environment variable."
   :pre-let ((bashate-exec (executable-find flymake-bashate-executable)))
   :pre-check (progn
                (unless bashate-exec
-                 (error "The '%s' executable was not found" bashate-exec))
+                 (user-error "The '%s' executable was not found" bashate-exec))
                (unless (numberp flymake-bashate-max-line-length)
-                 (error
+                 (user-error
                   "The `flymake-bashate-max-line-length' must be a number")))
   :write-type 'file
   :proc-form `(,bashate-exec
