@@ -3,7 +3,7 @@
 ;; Copyright (C) 2024-2025 James Cherti | https://www.jamescherti.com/contact/
 
 ;; Author: James Cherti
-;; Version: 1.0.2
+;; Version: 1.0.3
 ;; URL: https://github.com/jamescherti/flymake-bashate.el
 ;; Keywords: tools
 ;; Package-Requires: ((flymake-quickdef "1.0.0") (emacs "27.1"))
@@ -100,9 +100,9 @@ environment variable."
   :pre-let ((bashate-exec (executable-find flymake-bashate-executable)))
   :pre-check (progn
                (unless bashate-exec
-                 (error "The '%s' executable was not found" bashate-exec))
+                 (user-error "The '%s' executable was not found" bashate-exec))
                (unless (numberp flymake-bashate-max-line-length)
-                 (error
+                 (user-error
                   "The `flymake-bashate-max-line-length' must be a number")))
   :write-type 'file
   :proc-form `(,bashate-exec
