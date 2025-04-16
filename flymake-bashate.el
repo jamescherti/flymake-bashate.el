@@ -144,7 +144,10 @@ environment variable."
   "Set up Flymake for Bashate linting in the current buffer.
 This function adds `flymake-bashate-backend' to the list of Flymake diagnostic
 functions, enabling Bashate style checks locally for the current buffer."
-  (add-hook 'flymake-diagnostic-functions #'flymake-bashate-backend nil t))
+  (if (executable-find flymake-bashate-executable)
+      (add-hook 'flymake-diagnostic-functions #'flymake-bashate-backend nil t)
+    (message "[flymake-bashate] Warning: The '%s' executable was not found."
+             flymake-bashate-executable)))
 
 (provide 'flymake-bashate)
 ;;; flymake-bashate.el ends here
