@@ -100,9 +100,9 @@ environment variable."
   :pre-let ((bashate-exec (executable-find flymake-bashate-executable)))
   :pre-check (progn
                (unless bashate-exec
-                 (user-error "The '%s' executable was not found" bashate-exec))
+                 (error "The '%s' executable was not found" bashate-exec))
                (unless (numberp flymake-bashate-max-line-length)
-                 (user-error
+                 (error
                   "The `flymake-bashate-max-line-length' must be a number")))
   :write-type 'file
   :proc-form `(,bashate-exec
@@ -146,7 +146,8 @@ This function adds `flymake-bashate-backend' to the list of Flymake diagnostic
 functions, enabling Bashate style checks locally for the current buffer."
   (if (executable-find flymake-bashate-executable)
       (add-hook 'flymake-diagnostic-functions #'flymake-bashate-backend nil t)
-    (message "[flymake-bashate] Warning: The '%s' executable was not found."
+    (message (concat "[flymake-bashate] Not enabled because '%s' was not found"
+                     " in $PATH. Ensure it is installed and accessible.")
              flymake-bashate-executable)))
 
 (provide 'flymake-bashate)
