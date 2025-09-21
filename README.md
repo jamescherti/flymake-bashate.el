@@ -3,7 +3,7 @@
 [![MELPA](https://melpa.org/packages/flymake-bashate-badge.svg)](https://melpa.org/#/flymake-bashate)
 [![MELPA Stable](https://stable.melpa.org/packages/flymake-bashate-badge.svg)](https://stable.melpa.org/#/flymake-bashate)
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
-![](https://raw.githubusercontent.com/jamescherti/flymake-bashate.el/main/.images/made-for-gnu-emacs.svg)
+![](https://jamescherti.com/misc/made-for-gnu-emacs.svg)
 
 The `flymake-bashate` Emacs package provides a Flymake backend for `bashate`, enabling real-time style checking for Bash shell scripts within Emacs.
 
