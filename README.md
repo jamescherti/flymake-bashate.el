@@ -9,6 +9,8 @@ The `flymake-bashate` Emacs package provides a Flymake backend for `bashate`, en
 
 *(This package can also work with Flycheck: simply use the flymake-flycheck package, which allows any Emacs Flymake backend to function as a Flycheck checker.)*
 
+If this enhances your workflow, please show your support by **⭐ starring flymake-bashate.el on GitHub** to help more Emacs users discover its benefits.
+
 ## Installation
 
 To install `flymake-bashate` from MELPA:
