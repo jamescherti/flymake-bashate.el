@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
 ![](https://jamescherti.com/misc/made-for-gnu-emacs.svg)
 
-The `flymake-bashate` Emacs package provides a Flymake backend for `bashate`, enabling real-time style checking for Bash shell scripts within Emacs.
+The **[flymake-bashate](https://github.com/jamescherti/flymake-bashate.el)** Emacs package provides a Flymake backend for `bashate`, enabling real-time style checking for Bash shell scripts within Emacs.
 
 *(This package can also work with Flycheck: simply use the flymake-flycheck package, which allows any Emacs Flymake backend to function as a Flycheck checker.)*
 
