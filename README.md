@@ -20,7 +20,6 @@ To install `flymake-bashate` from MELPA:
 2. Add the following code to your Emacs init file to install `flymake-bashate` from MELPA:
 ```emacs-lisp
 (use-package flymake-bashate
-  :ensure t
   :commands flymake-bashate-setup
   :hook (((bash-ts-mode sh-mode) . flymake-bashate-setup)
          ((bash-ts-mode sh-mode) . flymake-mode))

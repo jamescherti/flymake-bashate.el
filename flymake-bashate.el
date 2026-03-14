@@ -36,7 +36,6 @@
 ;; Installation from MELPA:
 ;; ------------------------
 ;; (use-package flymake-bashate
-;;   :ensure t
 ;;   :commands flymake-bashate-setup
 ;;   :hook (((bash-ts-mode sh-mode) . flymake-bashate-setup)
 ;;          ((bash-ts-mode sh-mode) . flymake-mode))
@@ -97,47 +96,47 @@ environment variable."
   :group 'flymake-bashate)
 
 (flymake-quickdef-backend flymake-bashate-backend
-  :pre-let ((bashate-exec (executable-find flymake-bashate-executable)))
-  :pre-check (progn
-               (unless bashate-exec
-                 (error "The '%s' executable was not found" bashate-exec))
-               (unless (numberp flymake-bashate-max-line-length)
-                 (error
-                  "The `flymake-bashate-max-line-length' must be a number")))
-  :write-type 'file
-  :proc-form `(,bashate-exec
-               ,@(when flymake-bashate-ignore
-                   `("--ignore" ,flymake-bashate-ignore))
-               ,@(when (and flymake-bashate-max-line-length
-                            (numberp flymake-bashate-max-line-length))
-                   `("--max-line-length"
-                     ,(number-to-string flymake-bashate-max-line-length)))
-               ,fmqd-temp-file)
-  :search-regexp (rx bol
-                     (zero-or-more any)
-                     (literal (file-name-nondirectory fmqd-temp-file)) ":"
-                     (group (one-or-more digit)) ":"
-                     (group (one-or-more digit)) ":"
-                     (one-or-more (syntax whitespace))
-                     (group "E" (one-or-more digit))
-                     (one-or-more (syntax whitespace))
-                     (group (one-or-more any))
-                     eol)
-  :prep-diagnostic
-  (let* ((lnum (string-to-number (match-string 1)))
-         (colnum (string-to-number (match-string 2)))
-         (code (match-string 3))
-         (text (match-string 4))
-         (pos (flymake-diag-region fmqd-source lnum colnum))
-         (beg (car pos))
-         (end (cdr pos))
-         (type (cond
-                ;; E040: Syntax errors reported by bash -n
-                ((string= code "E040") :error)
-                ;; All other errors are warnings related to code style
-                (t :warning)))
-         (msg (format "%s: %s" code text)))
-    (list fmqd-source beg end type msg)))
+                          :pre-let ((bashate-exec (executable-find flymake-bashate-executable)))
+                          :pre-check (progn
+                                       (unless bashate-exec
+                                         (error "The '%s' executable was not found" bashate-exec))
+                                       (unless (numberp flymake-bashate-max-line-length)
+                                         (error
+                                          "The `flymake-bashate-max-line-length' must be a number")))
+                          :write-type 'file
+                          :proc-form `(,bashate-exec
+                                       ,@(when flymake-bashate-ignore
+                                           `("--ignore" ,flymake-bashate-ignore))
+                                       ,@(when (and flymake-bashate-max-line-length
+                                                    (numberp flymake-bashate-max-line-length))
+                                           `("--max-line-length"
+                                             ,(number-to-string flymake-bashate-max-line-length)))
+                                       ,fmqd-temp-file)
+                          :search-regexp (rx bol
+                                             (zero-or-more any)
+                                             (literal (file-name-nondirectory fmqd-temp-file)) ":"
+                                             (group (one-or-more digit)) ":"
+                                             (group (one-or-more digit)) ":"
+                                             (one-or-more (syntax whitespace))
+                                             (group "E" (one-or-more digit))
+                                             (one-or-more (syntax whitespace))
+                                             (group (one-or-more any))
+                                             eol)
+                          :prep-diagnostic
+                          (let* ((lnum (string-to-number (match-string 1)))
+                                 (colnum (string-to-number (match-string 2)))
+                                 (code (match-string 3))
+                                 (text (match-string 4))
+                                 (pos (flymake-diag-region fmqd-source lnum colnum))
+                                 (beg (car pos))
+                                 (end (cdr pos))
+                                 (type (cond
+                                        ;; E040: Syntax errors reported by bash -n
+                                        ((string= code "E040") :error)
+                                        ;; All other errors are warnings related to code style
+                                        (t :warning)))
+                                 (msg (format "%s: %s" code text)))
+                            (list fmqd-source beg end type msg)))
 
 ;;;###autoload
 (defun flymake-bashate-setup ()
