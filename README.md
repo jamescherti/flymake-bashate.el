@@ -58,6 +58,10 @@ To change the path or filename of the Bashate executable:
 
 (Defaults to "bashate".)
 
+## Comments from users
+
+- [gsotirchos](https://github.com/jamescherti/flymake-bashate.el/issues/5): 'Thank you for maintaining flymake-bashate, I really appreciate the work you've put into it.'
+
 ## License
 
 Copyright (C) 2024-2026 [James Cherti](https://www.jamescherti.com)
