@@ -100,7 +100,8 @@ environment variable."
   :pre-check (progn
                (unless bashate-exec
                  (error "The '%s' executable was not found" bashate-exec))
-               (unless (numberp flymake-bashate-max-line-length)
+               (unless (or (null flymake-bashate-max-line-length)
+                           (numberp flymake-bashate-max-line-length))
                  (error
                   "The `flymake-bashate-max-line-length' must be a number")))
   :write-type 'file
