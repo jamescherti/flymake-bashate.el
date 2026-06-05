@@ -114,14 +114,14 @@ environment variable."
                      ,(number-to-string flymake-bashate-max-line-length)))
                ,fmqd-temp-file)
   :search-regexp (rx bol
-                     (zero-or-more anychar)
+                     (zero-or-more nonl)
                      (literal (file-name-nondirectory fmqd-temp-file)) ":"
                      (group (one-or-more digit)) ":"
                      (group (one-or-more digit)) ":"
                      (one-or-more (syntax whitespace))
                      (group "E" (one-or-more digit))
                      (one-or-more (syntax whitespace))
-                     (group (one-or-more anychar))
+                     (group (one-or-more nonl))
                      eol)
   :prep-diagnostic
   (let* ((lnum (string-to-number (match-string 1)))
