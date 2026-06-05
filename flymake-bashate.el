@@ -31,7 +31,7 @@
 ;;
 ;; (This package can also work with Flycheck: simply use the `flymake-flycheck`
 ;; package, which allows any Emacs Flymake backend to function as a Flycheck
-;; checker.)*
+;; checker.)
 ;;
 ;; Installation from MELPA:
 ;; ------------------------
@@ -66,7 +66,7 @@
 (require 'flymake-quickdef)
 
 (defgroup flymake-bashate nil
-  "Non-nil if flymake-bashate mode mode is enabled."
+  "A Flymake backend for bashate, a Bash scripts style checker."
   :group 'flymake-bashate
   :prefix "flymake-bashate-"
   :link '(url-link
@@ -99,17 +99,18 @@ environment variable."
   :pre-let ((bashate-exec (executable-find flymake-bashate-executable)))
   :pre-check (progn
                (unless bashate-exec
-                 (error "The '%s' executable was not found" bashate-exec))
+                 (error "The '%s' executable was not found"
+                        flymake-bashate-executable))
                (unless (or (null flymake-bashate-max-line-length)
-                           (numberp flymake-bashate-max-line-length))
+                           (natnump flymake-bashate-max-line-length))
                  (error
-                  "The `flymake-bashate-max-line-length' must be a number")))
+                  "The `flymake-bashate-max-line-length' must be a positive integer")))
   :write-type 'file
   :proc-form `(,bashate-exec
                ,@(when flymake-bashate-ignore
                    `("--ignore" ,flymake-bashate-ignore))
                ,@(when (and flymake-bashate-max-line-length
-                            (numberp flymake-bashate-max-line-length))
+                            (natnump flymake-bashate-max-line-length))
                    `("--max-line-length"
                      ,(number-to-string flymake-bashate-max-line-length)))
                ,fmqd-temp-file)
