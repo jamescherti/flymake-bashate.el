@@ -1,5 +1,5 @@
 # flymake-bashate.el - A Flymake backend for bashate
-![Build Status](https://github.com/jamescherti/flymake-bashate.el/actions/workflows/ci.yml/badge.svg)
+![Build Status](https://github.com/jamescherti/flymake-bashate.el/actions/workflows/melpazoid.yml/badge.svg)
 [![MELPA](https://melpa.org/packages/flymake-bashate-badge.svg)](https://melpa.org/#/flymake-bashate)
 [![MELPA Stable](https://stable.melpa.org/packages/flymake-bashate-badge.svg)](https://stable.melpa.org/#/flymake-bashate)
 ![License](https://img.shields.io/github/license/jamescherti/flymake-bashate.el)
