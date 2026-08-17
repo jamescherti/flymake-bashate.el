@@ -1,4 +1,4 @@
-# flymake-bashate.el - A Flymake backend for bashate
+# flymake-bashate.el - An Emacs Flymake backend for bashate
 ![Build Status](https://github.com/jamescherti/flymake-bashate.el/actions/workflows/melpazoid.yml/badge.svg)
 [![MELPA](https://melpa.org/packages/flymake-bashate-badge.svg)](https://melpa.org/#/flymake-bashate)
 [![MELPA Stable](https://stable.melpa.org/packages/flymake-bashate-badge.svg)](https://stable.melpa.org/#/flymake-bashate)
