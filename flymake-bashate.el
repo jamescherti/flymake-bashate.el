@@ -5,7 +5,7 @@
 ;; Author: James Cherti <https://www.jamescherti.com/contact/>
 ;; Version: 1.0.5
 ;; URL: https://github.com/jamescherti/flymake-bashate.el
-;; Keywords: tools
+;; Keywords: tools, languages
 ;; Package-Requires: ((flymake-quickdef "1.0.0") (emacs "27.1"))
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -67,7 +67,7 @@
 
 (defgroup flymake-bashate nil
   "A Flymake backend for bashate, a Bash scripts style checker."
-  :group 'flymake-bashate
+  :group 'flymake
   :prefix "flymake-bashate-"
   :link '(url-link
           :tag "Github"
