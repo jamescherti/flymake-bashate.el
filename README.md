@@ -6,7 +6,7 @@
 ![](https://jamescherti.com/misc/made-for-gnu-emacs.svg)
 
 - Author: James Cherti <[https://www.jamescherti.com/](https://www.jamescherti.com/)>
-- License: GPL
+- License: GPL 3.0 or later
 
 The **[flymake-bashate](https://github.com/jamescherti/flymake-bashate.el)** Emacs package provides a Flymake backend for `bashate`, enabling real-time style checking for Bash shell scripts within Emacs.
 
